@@ -4,9 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 
-public class ContacInfoPage {
+public class ContactInfoPage {
 
-    public class ContactInfoPage extends BasePage {
+    public class contactInfoPage extends BasePage {
 
         @FindBy(className = "user-name")
         public WebElement contactFullName;
