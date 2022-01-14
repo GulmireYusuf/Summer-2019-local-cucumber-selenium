@@ -41,12 +41,17 @@ public class LoginStepDefs {
     @When("the user enters the store manager login information")
         public void the_user_enters_the_store_manager_login_information() {
         System.out.println("Entering store manager information");
+        String storeUserName=ConfigurationReader.get("store_manager_username");
+        String storePassWord=ConfigurationReader.get("store_manager_password");
+        LoginPage loginPage=new LoginPage();
+        loginPage.login(storeUserName,storePassWord);
 
     }
+
     @Then("the user should be able to login")
     public void the_user_should_be_able_to_login() {
         System.out.println("verifying that user is logged in");
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(4);
         String actualTitle=Driver.get().getTitle();
         Assert.assertEquals("Dashboard",actualTitle);
     }
