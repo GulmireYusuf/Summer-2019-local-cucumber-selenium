@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
         plugin = {"json:target/cucumber.json"},
         features = "src/test/resources/features/",// deature file path
         glue = "com.vytrack.step_definitions",// implementation path
-        dryRun = false, // only test step defi is match with deature file or not
-        tags="@wip"
+        dryRun = false, // if we want to execute something it should be false; only test step defi is match with deature file or not
+        tags="@differentUser"
 
 )
 public class CukesRunner {
