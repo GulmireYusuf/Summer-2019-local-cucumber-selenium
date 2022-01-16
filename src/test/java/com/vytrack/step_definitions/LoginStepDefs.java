@@ -18,8 +18,8 @@ public class LoginStepDefs {
         Driver.get().get(url);
     }
 
-    @When("the users enters the driver login information")
-    public void the_users_enters_the_driver_login_information() {
+    @When("the user enters the driver login information")
+    public void the_user_enters_the_driver_login_information() {
         System.out.println("Entering driver login info");
         String dUserName=ConfigurationReader.get("driver_username");
         String passWord=ConfigurationReader.get("driver_password");
@@ -59,6 +59,7 @@ public class LoginStepDefs {
     @Given("the user logs in as a {string}")
     public void the_user_logs_in_as_a(String userType) {
         Driver.get().get(ConfigurationReader.get("url"));
+        System.out.println("user type= "+userType);
         String username=null, password=null;
         switch (userType){
             case "driver":
@@ -78,6 +79,8 @@ public class LoginStepDefs {
                 Assert.fail("Wrong user type provided");
         }
         new LoginPage().login(username,password);
+
+        String [][] arry;
 
     }
 

@@ -20,16 +20,15 @@ public class LoginWithParametersStepDefs {
         LoginPage loginPage=new LoginPage();
         loginPage.login(userName,passWord);
 
-
     }
 
-    @Then("the tile should contain {string}")
-    public void the_tile_should_contain(String title) {
-        System.out.println("title= "+title);
+    @Then("the title should contain {string}")
+    public void the_title_should_contain(String title) {
+        System.out.println("title = " + title);
         BrowserUtils.waitFor(3);
-        Assert.assertTrue(Driver.get().getTitle().contains(title));
+        //Assert.assertTrue(Driver.get().getTitle().contains(title));
+        Assert.assertTrue("Actual title: " + Driver.get().getTitle(), Driver.get().getTitle().contains(title));
     }
-
 
     @Given("a driver is logged in")
     public void a_driver_is_logged_in() {
@@ -42,7 +41,6 @@ public class LoginWithParametersStepDefs {
     @When("the user goes to {string} {string}")
     public void the_user_goes_to(String tab, String module) {
         new DashboardPage().navigateToModule(tab, module);
-
 
     }
     @Then("default page number should be {int}")

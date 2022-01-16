@@ -15,7 +15,7 @@ Feature: Contacts page
     |Activities |
     |System |
 
-  @wip
+
   Scenario: login a s a given user
     Given the user is on the login page
     When the user logs in using following credentials
@@ -24,5 +24,21 @@ Feature: Contacts page
       |password |UserUser123|
       |lname    |Yu|
     Then the user should be able to login
+
+  @wip1
+  Scenario Outline: Login as many given users
+    Given the user is on the login page
+    When the user logs in using following credentials
+      | fname    | <firstname> |
+      | lname    | <lastname>  |
+      | username | <username>  |
+      | password | UserUser123 |
+    Then the user should be able to login
+
+    Examples:
+      | firstname | lastname | username        |
+      | Parsa     | Mehdi    | salesmanager101 |
+      | Rahwa     | Maaza    | storemanager85  |
+
 
 

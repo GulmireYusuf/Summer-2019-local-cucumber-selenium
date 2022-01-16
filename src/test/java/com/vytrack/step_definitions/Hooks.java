@@ -15,13 +15,12 @@ public class Hooks {
     }
 
     @After
-    public void tearDownAndScreenshotOnFailure(Scenario scenario){
+    public void tearDownAndScreenshot(Scenario scenario){
         System.out.println("This is coming from after scenario");
         //if scenario fails, take a screenshot
         if(scenario.isFailed()){
             final byte[] screenshot=((TakesScreenshot)Driver.get()).getScreenshotAs(OutputType.BYTES);
-            byte[] pngBytes;
-            scenario.attach(screenshot,"image/png","Take screenshot");
+            scenario.attach(screenshot,"image/png","Attachment 1 (png)");
 
         }
         Driver.closeDriver();

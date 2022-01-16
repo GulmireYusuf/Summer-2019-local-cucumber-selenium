@@ -32,6 +32,8 @@ public class ContactsStepDefs {
     @When("the user logs in using following credentials")
     public void the_user_logs_in_using_following_credentials(Map<String,String> userData) {
         System.out.println(userData);
+        System.out.println("Firstname: "+userData.get("fname"));
+        System.out.println("Lastname: "+userData.get("lname"));
         System.out.println("username: "+userData.get("username"));
         System.out.println("password: "+userData.get("password"));
 
