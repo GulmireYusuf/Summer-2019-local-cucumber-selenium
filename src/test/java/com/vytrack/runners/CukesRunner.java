@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/",// deature file path
         glue = "com.vytrack.step_definitions",// implementation path
         dryRun = false, // if we want to execute something it should be false; only test step defi is match with deature file or not
-        tags="@store_manager"
+        tags="@wip"
 
 )
 public class CukesRunner {

@@ -1,10 +1,8 @@
+@accounts @VYT-312
 Feature: Login as different user types
-
   # WARM UP : implement the following scenarios
   # you can reuse previous step defs classes or create a new one
   # use any tag
-
-
   Scenario: Driver user
     Given the user logs in as a "driver"
     When the user goes to "Activities" "Calendar Events"
@@ -20,7 +18,7 @@ Feature: Login as different user types
     When the user goes to "Customers" "Accounts"
     Then the title should contain "Accounts - Customers"
 
-
+  @smoke
     Scenario Outline: Test login with different types
       Given the user logs in as a "<userType>"
 

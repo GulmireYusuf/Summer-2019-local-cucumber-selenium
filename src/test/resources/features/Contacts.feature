@@ -1,5 +1,5 @@
+@smoke
 Feature: Contacts page
-
 
   Scenario: Default page number
     Given a driver is logged in
