@@ -1,6 +1,5 @@
 @accounts @VYT-312
 Feature: Login as different user types
-
   # WARM UP : implement the following scenarios
   # you can reuse previous step defs classes or create a new one
   # use any tag
