@@ -29,6 +29,7 @@ public class Hooks {
 
     @After("@sales_manager")
     public void tearDownSalesManager(){
+
         System.out.println("This is coming from after scenario for sales managers");
     }
 

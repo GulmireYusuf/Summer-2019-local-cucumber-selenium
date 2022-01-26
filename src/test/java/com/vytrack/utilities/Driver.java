@@ -9,22 +9,24 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+
 public class Driver {
-    private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
-
+    private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
+    //private static final Logger logger= LogManager.getLogger(Driver.class);
     private Driver() {
-
     }
-
     public static WebDriver get() {
         //if this thread doesn't have a web driver yet - create it and add to pool
         if (driverPool.get() == null) {
             System.out.println("TRYING TO CREATE DRIVER");
             // this line will tell which browser should open based on the value from properties file
             // this line we can change browser type in terminal and run the test from terminal
-            String browser = System.getProperty("browser") == null ? System.getProperty("browser") : ConfigurationReader.get("browser");
+            String browser = System.getProperty("browser") != null ?browser=System.getProperty("browser") : ConfigurationReader.get("browser");
             switch (browser) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();

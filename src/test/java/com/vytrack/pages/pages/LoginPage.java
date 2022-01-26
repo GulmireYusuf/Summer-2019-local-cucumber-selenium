@@ -7,7 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-    public LoginPage(){   //constrauctor here// every page object model class must have this method
+    public LoginPage(){
+        //constrauctor here// every page object model class must have this method
         PageFactory.initElements(Driver.get(),this);//we need pagefactory class and initElement method to initializie object.
     }
 

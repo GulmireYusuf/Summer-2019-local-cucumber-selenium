@@ -6,13 +6,14 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"json:target/cucumber.json",
+        plugin = {"json:target/cucumber.json",//place where to save the report
+                  "html:target/default-cucumber-reports",
                    "rerun:target/rerun.txt"
         },// we can provide two in here use "," between two
-        features = "src/test/resources/features/",// deature file path
+        features = "src/test/resources/features/",// feature file path
         glue = "com.vytrack.step_definitions",// implementation path
         dryRun = false, // if we want to execute something it should be false; only test step defi is match with deature file or not
-        tags="@wip"
+        tags="@driver"
 
 )
 public class CukesRunner {
